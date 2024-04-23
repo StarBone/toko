@@ -26,11 +26,11 @@ require "function.php";
                                     <div class="card-body">
                                         <form>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputUsername" type="email" placeholder="name@example.com/Username" />
+                                                <input class="form-control" id="inputUsername" name="username" type="text" placeholder="Masukan Username" />
                                                 <label for="inputUsername">Username</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" />
+                                                <input class="form-control" id="inputPassword" name="password" type="password" placeholder="Masukan Password" />
                                                 <label for="inputPassword">Password</label>
                                             </div>
                                             <div class="form-check mb-3">
@@ -38,8 +38,7 @@ require "function.php";
                                                 <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="password.html">Forgot Password?</a>
-                                                <a class="btn btn-primary" href="index.php">Login</a>
+                                                <button type="submit" name="login" class="btn btn-primary">Login</button>
                                             </div>
                                         </form>
                                     </div>
