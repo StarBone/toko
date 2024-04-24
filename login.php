@@ -26,11 +26,11 @@ require "function.php";
                                     <div class="card-body">
                                         <form>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputUsername" name="username" type="text" placeholder="Masukan Username" />
+                                                <input class="form-control" id="inputUsername" name="username" autocomplete="on" type="text" placeholder="Masukan Username" />
                                                 <label for="inputUsername">Username</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" name="password" type="password" placeholder="Masukan Password" />
+                                                <input class="form-control" id="inputPassword" name="password" autocomplete="on" type="password" placeholder="Masukan Password" />
                                                 <label for="inputPassword">Password</label>
                                             </div>
                                             <div class="form-check mb-3">
