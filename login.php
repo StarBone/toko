@@ -24,7 +24,7 @@ require "function.php";
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
-                                        <form>
+                                        <form method="POST">
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputUsername" name="username" autocomplete="on" type="text" placeholder="Masukan Username" />
                                                 <label for="inputUsername">Username</label>

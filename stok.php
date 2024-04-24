@@ -76,6 +76,33 @@
                                 <div class="card bg-primary text-white mb-4 mt-3">
                                     <div class="card-body">Jumlah Barang : </div>
                                 </div>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Tambah Barang</button>
+                                    <form method="POST">
+                                        <!-- The Modal -->
+                                        <div class="modal fade" id="myModal">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal Header -->
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Modal Heading</h4>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                    </div>
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <input type="text" class="form-control mt-3" name="nama_produk" placeholder="Nama Produk">
+                                                        <input type="text" class="form-control mt-3" name="deskripsi" placeholder="Deskripsi Produk">
+                                                        <input type="text" class="form-control mt-3" name="harga" placeholder="Harga Produk">
+                                                        <input type="text" class="form-control mt-3" name="stok" placeholder="Stok Produk">
+                                                    </div>
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-success" name="tambahbarang">Submit</button>
+                                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>  
                             </div>
                         <div class="card mb-4">
                             <div class="card-header">
