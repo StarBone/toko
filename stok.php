@@ -81,9 +81,9 @@ require "function.php";
                         <h1 class="mt-4">Stok Barang</h1>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4 mt-3">
+                                <!-- <div class="card bg-primary text-white mb-4 mt-3">
                                     <div class="card-body">Jumlah Barang : </div>
-                                </div>
+                                </div> -->
                                 <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#myModal">Tambah Barang</button>
                                         <!-- The Modal -->
                                         <div class="modal fade" id="myModal">
@@ -159,7 +159,7 @@ require "function.php";
                                             <td><?=$deskripsi;?></td>
                                             <td><?=$harga;?></td>
                                             <td><?=$stok;?></td>
-                                            <td>Edit Delete</td>
+                                            <td><a href="view.php" class="btn btn-primary" target="blank">Tampilkan</a></td>
                                         </tr>
 
                                     <?php

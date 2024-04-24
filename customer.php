@@ -81,9 +81,9 @@ require "function.php";
                         <h1 class="mt-4">Customer</h1>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4 mt-3">
+                                <!-- <div class="card bg-primary text-white mb-4 mt-3">
                                     <div class="card-body">Jumlah Pelanggan : </div>
-                                </div>
+                                </div> -->
                                 <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#myModal">Tambah Customer</button>
                                         <!-- The Modal -->
                                         <div class="modal fade" id="myModal">
@@ -97,14 +97,13 @@ require "function.php";
                                                     <form method="POST">
                                                     <!-- Modal body -->
                                                     <div class="modal-body">
-                                                        <input type="text" class="form-control mt-3" name="nama_produk" placeholder="Nama Produk">
-                                                        <input type="text" class="form-control mt-3" name="deskripsi" placeholder="Deskripsi Produk">
-                                                        <input type="text" class="form-control mt-3" name="harga" placeholder="Harga Produk">
-                                                        <input type="text" class="form-control mt-3" name="stok" placeholder="Stok Produk">
+                                                        <input type="text" class="form-control mt-3" name="nama_pelanggan" placeholder="Nama Pelanggan">
+                                                        <input type="text" class="form-control mt-3" name="no_telp" placeholder="No Telepon">
+                                                        <input type="text" class="form-control mt-3" name="alamat" placeholder="Alamat">
                                                     </div>
                                                     <!-- Modal footer -->
                                                     <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-success" name="tambahbarang">Submit</button>
+                                                        <button type="submit" class="btn btn-success" name="tambahpelanggan">Submit</button>
                                                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                                                     </div>
                                                     </form>  
@@ -125,6 +124,7 @@ require "function.php";
                                             <th>Nama Pelanggan</th>
                                             <th>No Telepon</th>
                                             <th>Alamat</th>
+                                            <th>Ubah</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -133,12 +133,13 @@ require "function.php";
                                             <th>Nama Pelanggan</th>
                                             <th>No Telepon</th>
                                             <th>Alamat</th>
+                                            <th>Ubah</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                     <?php
 
-                                    $get = mysqli_query($con, "SELECT * FROM produk");
+                                    $get = mysqli_query($con, "SELECT * FROM pelanggan");
                                     $i = 1;
                                     
                                     while ($p=mysqli_fetch_array($get)) {
@@ -152,7 +153,6 @@ require "function.php";
                                         <tr>
                                             <td><?=$i++;?></td>
                                             <td><?=$namapelanggan;?></td>
-                                            <td><?=$deskripsi;?></td>
                                             <td><?=$notelp;?></td>
                                             <td><?=$alamat;?></td>
                                             <td>Edit Delete</td>

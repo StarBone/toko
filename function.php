@@ -52,4 +52,23 @@
         }
     }
 
+    if (isset($_POST['tambahpelanggan'])) {
+        $namapelanggan = $_POST['nama_pelanggan'];
+        $notelp = $_POST['no_telp'];
+        $alamat = $_POST['alamat'];
+
+        $insert = mysqli_query($con, "INSERT INTO pelanggan (nama_pelanggan, no_telp, alamat) VALUES ('$namapelanggan', '$notelp', '$alamat')");
+
+    if ($insert) {
+        header('location:customer.php');
+        }
+        else {
+            echo '
+            <script>alert("Gagal menambah pelanggan baru");
+            window.location.href="pelanggan.php"
+            </script>';
+            exit;
+        }
+    }
+
 ?>

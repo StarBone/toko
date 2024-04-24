@@ -81,11 +81,55 @@ require "function.php";
                         <h1 class="mt-4">Dashboard</h1>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4 mt-3">
+                                <!-- <div class="card bg-primary text-white mb-4 mt-3">
                                     <div class="card-body">Jumlah Barang : </div>
-                                </div>
+                                </div> -->
+                                <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#myModal">Tambah Barang</button>
+                                        <!-- The Modal -->
+                                        <div class="modal fade" id="myModal">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal Header -->
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Modal Heading</h4>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                    </div>
+                                                    <form method="POST">
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        Pilih Pelanggan
+                                                        <select name="idpelanggan"></select>
+
+                                                        <?php
+                                                            $getpelanggan = mysqli_query($con, "SELECT * FROM pelanggan");
+
+                                                            while ($pl=mysqli_fetch_array($getpelanggan)) {
+                                                                $namapelanggan = $pl['nama_pelanggan'];
+                                                                $idpelanggan = $pl['idpelanggan'];
+                                                                $alamat = $pl['alamat'];
+                                                        ?>
+                                                        <tr>
+                                                            <td><?=$idpesanan;?></td>
+                                                            <td><?=$tanggal;?></td>
+                                                            <td><?=$namapelanggan;?></td>
+                                                            <td>Jumlah</td>
+                                                            <td><a href="view.php" class="btn btn-primary" target="blank">Tampilkan</a></td>
+                                                        </tr>
+                                                        <?php
+                                                        };
+                                                        ?>
+                                                    </div>
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn btn-success" name="tambahbarang">Submit</button>
+                                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                    </form>  
+                                                </div>
+                                            </div>
+                                        </div>
                             </div>
-                        <div class="card mb-4">
+                        <div class="card mb-4 mt-3">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 Data Barang
