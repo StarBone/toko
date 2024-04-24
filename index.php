@@ -1,5 +1,13 @@
 <?php
 require "function.php";
+$idp = $_GET['idp'];
+
+if (isset($_GET['idp'])) {
+    $idp = $_GET['idp'];
+}
+else {
+    header('location:index.php')
+}
 ?>
 
 <!DOCTYPE html>
@@ -101,9 +109,9 @@ require "function.php";
                                                         <select name="idpelanggan"></select>
 
                                                         <?php
-                                                            $getpelanggan = mysqli_query($con, "SELECT * FROM pelanggan");
+                                                            $get = mysqli_query($con, "SELECT * FROM pesanan p, pelanggan pl, WHERE p.idpelanggan=pl.idpelanggan");
 
-                                                            while ($pl=mysqli_fetch_array($getpelanggan)) {
+                                                            while ($pl=mysqli_fetch_array($get)) {
                                                                 $namapelanggan = $pl['nama_pelanggan'];
                                                                 $idpelanggan = $pl['idpelanggan'];
                                                                 $alamat = $pl['alamat'];
@@ -113,7 +121,7 @@ require "function.php";
                                                             <td><?=$tanggal;?></td>
                                                             <td><?=$namapelanggan;?></td>
                                                             <td>Jumlah</td>
-                                                            <td><a href="view.php" class="btn btn-primary" target="blank">Tampilkan</a></td>
+                                                            <td><a href="view.php?<?=$idpesanan;?>" class="btn btn-primary" target="blank">Tampilkan</a></td>
                                                         </tr>
                                                         <?php
                                                         };
