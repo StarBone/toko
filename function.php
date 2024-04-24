@@ -38,11 +38,10 @@
         $harga = $_POST['harga'];
         $stok = $_POST['stok'];
 
-        $insert = mysqli_query($con, "insert into produk (nama_produk, deskripsi,  harga, stok) values ('$namaproduk', $deskripsi', $harga',
-        '$stok') ");
+        $insert = mysqli_query($con, "INSERT INTO produk (nama_produk, deskripsi, harga, stok) VALUES ('$namaproduk', '$deskripsi', '$harga', '$stok')");
 
         if ($insert) {
-            header('location:stok.php');
+        header('location:stok.php');
         }
         else {
             echo '

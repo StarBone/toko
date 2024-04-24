@@ -1,3 +1,7 @@
+<?php
+require "function.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -76,8 +80,7 @@
                                 <div class="card bg-primary text-white mb-4 mt-3">
                                     <div class="card-body">Jumlah Barang : </div>
                                 </div>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Tambah Barang</button>
-                                    <form method="POST">
+                                <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#myModal">Tambah Barang</button>
                                         <!-- The Modal -->
                                         <div class="modal fade" id="myModal">
                                             <div class="modal-dialog">
@@ -87,6 +90,7 @@
                                                         <h4 class="modal-title">Modal Heading</h4>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                     </div>
+                                                    <form method="POST">
                                                     <!-- Modal body -->
                                                     <div class="modal-body">
                                                         <input type="text" class="form-control mt-3" name="nama_produk" placeholder="Nama Produk">
@@ -96,15 +100,15 @@
                                                     </div>
                                                     <!-- Modal footer -->
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-success" name="tambahbarang">Submit</button>
+                                                        <button type="submit" class="btn btn-success" name="tambahbarang">Submit</button>
                                                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                                                     </div>
+                                                    </form>  
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>  
                             </div>
-                        <div class="card mb-4">
+                        <div class="card mb-4 mt-3">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 Data Barang
@@ -113,33 +117,51 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>Deskripsi</th>
+                                            <th>Harga</th>
+                                            <th>Stok</th>
+                                            <th>Ubah</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>Deskripsi</th>
+                                            <th>Harga</th>
+                                            <th>Stok</th>
+                                            <th>Ubah</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
+
+                                    <?php
+
+                                    $get = mysqli_query($con, "SELECT * FROM produk");
+                                    $i = 1;
+                                    
+                                    while ($p=mysqli_fetch_array($get)) {
+                                        $namaproduk = $p['nama_produk'];
+                                        $deskripsi = $p['deskripsi'];
+                                        $harga = $p['harga'];
+                                        $stok = $p['stok'];
+
+                                    ?>
+
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
+                                            <td><?=$i++;?></td>
+                                            <td><?=$namaproduk;?></td>
+                                            <td><?=$deskripsi;?></td>
+                                            <td><?=$harga;?></td>
+                                            <td><?=$stok;?></td>
+                                            <td>Edit Delete</td>
                                         </tr>
+
+                                    <?php
+                                    };
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>
