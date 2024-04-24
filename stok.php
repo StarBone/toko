@@ -60,6 +60,10 @@ require "function.php";
                                 <div class="sb-nav-link-icon"><i class="fas fa-sign-in-alt"></i></div>
                                 Barang Masuk
                             </a>
+                            <a class="nav-link" href="masuk.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-sign-in-alt"></i></div>
+                                Customer
+                            </a>
                             <a class="nav-link" href="logout.php">
                                 Logout
                             </a>
@@ -136,7 +140,6 @@ require "function.php";
                                         </tr>
                                     </tfoot>
                                     <tbody>
-
                                     <?php
 
                                     $get = mysqli_query($con, "SELECT * FROM produk");
