@@ -10,7 +10,7 @@ require "function.php";
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
+        <title>Dashboard</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <!-- <link rel="stylesheet" href="css/index.css"> -->
@@ -60,7 +60,7 @@ require "function.php";
                                 <div class="sb-nav-link-icon"><i class="fas fa-sign-in-alt"></i></div>
                                 Barang Masuk
                             </a>
-                            <a class="nav-link" href="masuk.php">
+                            <a class="nav-link" href="customer.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-sign-in-alt"></i></div>
                                 Customer
                             </a>

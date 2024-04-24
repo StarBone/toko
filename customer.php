@@ -10,7 +10,7 @@ require "function.php";
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Stok Barang</title>
+        <title>Customer</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <!-- <link rel="stylesheet" href="css/index.css"> -->
@@ -78,38 +78,61 @@ require "function.php";
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Barang Masuk</h1>
+                        <h1 class="mt-4">Customer</h1>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4 mt-3">
-                                    <div class="card-body">Jumlah Barang : </div>
-                                 </div>
+                                    <div class="card-body">Jumlah Pelanggan : </div>
+                                </div>
+                                <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#myModal">Tambah Customer</button>
+                                        <!-- The Modal -->
+                                        <div class="modal fade" id="myModal">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal Header -->
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Modal Heading</h4>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                    </div>
+                                                    <form method="POST">
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <input type="text" class="form-control mt-3" name="nama_produk" placeholder="Nama Produk">
+                                                        <input type="text" class="form-control mt-3" name="deskripsi" placeholder="Deskripsi Produk">
+                                                        <input type="text" class="form-control mt-3" name="harga" placeholder="Harga Produk">
+                                                        <input type="text" class="form-control mt-3" name="stok" placeholder="Stok Produk">
+                                                    </div>
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn btn-success" name="tambahbarang">Submit</button>
+                                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                    </form>  
+                                                </div>
+                                            </div>
+                                        </div>
                             </div>
                         <div class="card mb-4 mt-3">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Data Barang
+                                Data Pelanggan
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama</th>
-                                            <th>Deskripsi</th>
-                                            <th>Harga</th>
-                                            <th>Stok</th>
-                                            <th>Ubah</th>
+                                            <th>Nama Pelanggan</th>
+                                            <th>No Telepon</th>
+                                            <th>Alamat</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama</th>
-                                            <th>Deskripsi</th>
-                                            <th>Harga</th>
-                                            <th>Stok</th>
-                                            <th>Ubah</th>
+                                            <th>Nama Pelanggan</th>
+                                            <th>No Telepon</th>
+                                            <th>Alamat</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -119,19 +142,19 @@ require "function.php";
                                     $i = 1;
                                     
                                     while ($p=mysqli_fetch_array($get)) {
-                                        $namaproduk = $p['nama_produk'];
-                                        $deskripsi = $p['deskripsi'];
-                                        $harga = $p['harga'];
-                                        $stok = $p['stok'];
+                                        $idpelanggan = $p['idpelanggan'];
+                                        $namapelanggan = $p['nama_pelanggan'];
+                                        $notelp = $p['no_telp'];
+                                        $alamat = $p['alamat'];
 
                                     ?>
 
                                         <tr>
                                             <td><?=$i++;?></td>
-                                            <td><?=$namaproduk;?></td>
+                                            <td><?=$namapelanggan;?></td>
                                             <td><?=$deskripsi;?></td>
-                                            <td><?=$harga;?></td>
-                                            <td><?=$stok;?></td>
+                                            <td><?=$notelp;?></td>
+                                            <td><?=$alamat;?></td>
                                             <td>Edit Delete</td>
                                         </tr>
 
